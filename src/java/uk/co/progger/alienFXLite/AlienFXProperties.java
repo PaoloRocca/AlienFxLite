@@ -9,10 +9,10 @@ public class AlienFXProperties {
 	 */
 	public static final boolean isDebug = false;
 	
-	public static final String AUTHOR = "Filip Wieladek";
+	public static final String AUTHOR = "Benjamin Chrétien";
 	
 	//Application info
-	public static final String ALIEN_FX_VERSION = "0.3";
+	public static final String ALIEN_FX_VERSION = "1.2.1";
 	public static final String ALIEN_FX_APPLICATION_RAW_NAME = "AlienFX Lite";
 	public static final String ALIEN_FX_APPLICATION_NAME = ALIEN_FX_APPLICATION_RAW_NAME +" "+ ALIEN_FX_VERSION;
 	
