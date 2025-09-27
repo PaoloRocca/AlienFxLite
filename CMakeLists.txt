@@ -63,9 +63,14 @@ SET(NATIVE_LIBRARY_NAME "libAlien${ARCH}${LIBRARY_EXTENSION}")
 # Java required
 FIND_PACKAGE(Java REQUIRED COMPONENTS Development)
 
-IF(Java_VERSION_MINOR LESS 7)
-  MESSAGE(ERROR "Java >= 7 is required")
-ENDIF()
+# Check Java version
+if(Java_VERSION_MAJOR EQUAL 1)
+  if(Java_VERSION_MINOR LESS 7)
+    message(FATAL_ERROR " Java >= 7 is required, but found ${Java_VERSION_MAJOR}.${Java_VERSION_MINOR}")
+  endif()
+elseif(Java_VERSION_MAJOR LESS 7)
+  message(FATAL_ERROR " Java >= 7 is required, but found ${Java_VERSION_MAJOR}.${Java_VERSION_MINOR}")
+endif()
 
 # Basic macros for the generation of jar files
 INCLUDE(${CMAKE_SOURCE_DIR}/CMakeModules/UseJava.cmake)
